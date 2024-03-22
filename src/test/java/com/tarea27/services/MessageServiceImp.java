@@ -15,11 +15,10 @@ public class MessageServiceImp implements MessageService {
 	List<Message> mensajes = new ArrayList<>();
 	
 	@Override
-	public void sendMessage(String subjet, User from, User to, String content) {
-		Message message = new Message(subjet, from, to, content);
-		to.addMessage(message);
+	public void sendMessage(Message message) {
 		mensajes.add(message);
-		System.out.print(message + "\n HAS SIDO ENVIADO");
+		message.getDestenatario().addMessage(message);
+		System.out.print("\n ¡MENSAJE ENVIADO! \n \n");
 		
 	}
 

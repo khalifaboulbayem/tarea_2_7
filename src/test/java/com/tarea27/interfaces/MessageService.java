@@ -6,7 +6,7 @@ import com.tarea27.models.User;
 
 
 public interface MessageService {
-	void sendMessage(String subjet, User from, User to, String content);
+	void sendMessage(Message msg);
 	List<Message> getAllMessage();
 	List<Message> getMessagesByUser(User user);
 }
