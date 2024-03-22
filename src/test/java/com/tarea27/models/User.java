@@ -10,7 +10,6 @@ public class User {
 	List<Message> messages;
 	
 	public User(String name, String email) {
-		super();
 		this.name = name;
 		this.email = email;
 		this.messages = new ArrayList<>();

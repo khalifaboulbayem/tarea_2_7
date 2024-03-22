@@ -7,6 +7,12 @@ public class Message {
 	String content;
 	
 	
+	public Message(String subjet, String from, String to, String content) {
+		this.subjet = subjet;
+		this.from = from;
+		this.to = to;
+		this.content = content;
+	}
 	public String getSubjet() {
 		return subjet;
 	}
