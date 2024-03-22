@@ -13,11 +13,14 @@ import com.tarea27.models.User;
 public class MessageServiceImp implements MessageService {
 
 	List<Message> mensajes = new ArrayList<>();
+	
 	@Override
-	public void sendMessage(String subjet, String from, String to, String content) {
+	public void sendMessage(String subjet, User from, User to, String content) {
 		Message message = new Message(subjet, from, to, content);
+		to.addMessage(message);
 		mensajes.add(message);
-
+		System.out.print(message + "\n HAS SIDO ENVIADO");
+		
 	}
 
 	@Override
@@ -29,4 +32,6 @@ public class MessageServiceImp implements MessageService {
 	public List<Message> getMessagesByUser(User user) {
 		return user.getMessages();
 	}
+
+	
 }
