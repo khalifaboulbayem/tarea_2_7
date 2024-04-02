@@ -3,7 +3,6 @@ package com.tarea27.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 
 import com.tarea27.models.Message;
@@ -11,11 +10,14 @@ import com.tarea27.models.User;
 import com.tarea27.services.MessageServiceImp;
 
 @Controller
-@ComponentScan("com.tarea27.services")
 public class MessageController {
 	
+	private MessageServiceImp messageService;
+	
 	@Autowired
-	MessageServiceImp messageService;
+	public MessageController(MessageServiceImp msgService) {
+		this.messageService = msgService;
+	}
 	
 	
 	public List<Message> getAll() {

@@ -3,8 +3,6 @@ package com.tarea27.app;
 import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 import com.tarea27.config.AppConfig;
 import com.tarea27.controllers.MessageController;

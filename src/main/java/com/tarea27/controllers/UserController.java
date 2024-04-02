@@ -2,19 +2,19 @@ package com.tarea27.controllers;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 
 import com.tarea27.models.User;
 import com.tarea27.services.UserServiceImp;
 
 @Controller
-@ComponentScan("com.tarea27.services")
 public class UserController {
 
-	@Autowired
-	UserServiceImp userService;
+	private final UserServiceImp userService;
+	
+	public UserController(UserServiceImp userService) {
+		this.userService = userService;
+	}
 	
 	
 	public List<User> getAll() {

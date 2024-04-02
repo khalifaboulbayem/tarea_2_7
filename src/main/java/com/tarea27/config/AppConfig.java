@@ -5,21 +5,23 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import com.tarea27.controllers.MessageController;
-import com.tarea27.interfaces.MessageService;
 import com.tarea27.services.MessageServiceImp;
 
+
 @Configuration
-@ComponentScan(basePackages = "com.tarea27")
+
+@ComponentScan("com.tarea27")
 public class AppConfig {
 	
 	//Configuran el Bean
 	@Bean
-	public MessageService messageServide() {
+	public MessageServiceImp messageServide() {
 		return new MessageServiceImp();
 	}
-
+    @Bean
 	//Configura el bean para el controlador
 	public MessageController messageController() {
-		return new MessageController();
+		return new MessageController(messageServide());
 	}
+   
 }
